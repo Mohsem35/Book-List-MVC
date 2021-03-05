@@ -1,0 +1,31 @@
+﻿@model BookListMVC.Model.Book
+@{
+    ViewBag.Title = "Edit Book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Edit Books</h2>
+
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-row">
+            <div class="col-3">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="col-3">
+                <label asp-for="Author"></label>
+                <input asp-for="Author" class="form-control" />
+            </div>
+            <div class="col-3">
+                <label asp-for="Pages"></label>
+                <input asp-for="Pages" class="form-control" />
+            </div>
+        </div>
+        <input type="hidden" asp-for="BookId" />
+        <button type="submit" class="btn btn-info btn-sm mt-2">Update</button>
+        <button type="button" asp-controller="Home" asp-action="Index" class="btn btn-secondary btn-sm mt-2">Back to List</button>
+    </form>
+</div>
